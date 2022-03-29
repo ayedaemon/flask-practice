@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: web_dashboard.Dockerfile
+    ports:
+      - '8001:80'
+  
+  public:
+    build:
+      context: .
+      dockerfile: web_public.Dockerfile
+    ports:
+      - '8002:80'
+
+
+  # dynamodb:
+  #   image: amazon/dynamodb-local:latest
+  #   container_name: dynamodb-local
+  #   ports:
+  #     - "8000:8000"
